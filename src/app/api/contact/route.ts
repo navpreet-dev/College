@@ -70,6 +70,7 @@ async function sendEmailNotification(record: SubmissionRecord): Promise<boolean>
       `Name:    ${record.name}`,
       `Email:   ${record.email}`,
       record.phone ? `Phone:   ${record.phone}` : null,
+      record.subject ? `Subject: ${record.subject}` : null,
       `Type:    ${record.type}`,
       "──────────────────────────────",
       "",
@@ -93,6 +94,7 @@ async function sendEmailNotification(record: SubmissionRecord): Promise<boolean>
             <tr><td style="padding: 8px 0; color: #6b7280; width: 80px; vertical-align: top;">Name</td><td style="padding: 8px 0; font-weight: 600;">${record.name}</td></tr>
             <tr><td style="padding: 8px 0; color: #6b7280; vertical-align: top;">Email</td><td style="padding: 8px 0;"><a href="mailto:${record.email}" style="color: #b8862f; text-decoration: none;">${record.email}</a></td></tr>
             ${record.phone ? `<tr><td style="padding: 8px 0; color: #6b7280; vertical-align: top;">Phone</td><td style="padding: 8px 0;">${record.phone}</td></tr>` : ""}
+            ${record.subject ? `<tr><td style="padding: 8px 0; color: #6b7280; vertical-align: top;">Subject</td><td style="padding: 8px 0;">${record.subject}</td></tr>` : ""}
             <tr><td style="padding: 8px 0; color: #6b7280; vertical-align: top;">Type</td><td style="padding: 8px 0;">${record.type}</td></tr>
           </table>
           <hr style="border: none; border-top: 1px solid #e8e6df; margin: 16px 0;" />
